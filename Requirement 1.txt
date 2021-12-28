@@ -1,0 +1,81 @@
+
+
+
+
+
+using System;
+
+public class Class1
+{
+    public class Details
+    {
+        public static void Main(string[] args)
+
+        {
+            User[] user=new User[2];
+            for(i=0;i<user.Length;i++)
+            {
+                Console.Writeline("enter the user{0}:, i+1");
+                string user=console.ReadLine();
+                string[] users=user.Split(",");
+                User[i]=new User(users[0],User[1]);
+                
+                
+            }
+            for(int i=0; i<2; i++)
+            {
+                Console.WriteLine("User {0}", i+1);
+                Console.WriteLine(User[i]);
+            }
+            }
+            }
+            
+        }
+
+
+    }
+}
+
+
+using System;
+namespace User1
+{
+    class User
+    {
+        public User() { }
+
+        public User(string username, string Email, string password)
+        {
+            Name = username;
+            Mail = Email;
+            pass = password;
+        }
+        public string Name { get; set; }
+        public string Mail{ get; set; }
+        public string pass { get; set; }
+
+        public override bool Equals(object obj)
+        {   
+            // com based on Name
+            User obj_T = (Task)obj;
+            return this.Name.Equals(obj_T.Name);
+        }
+
+        public override string ToString()
+        {
+            return String.Format("{0,5} {1,15} {2,15}", Name, Mail,pass);
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+        
+        public int CompareTo(object obj)
+        {
+            Task obj_Task=(Task)obj;
+            return this.Name.CompareTo(obj_task.Name);
+        }
+
+
+    }
+}
